@@ -25,9 +25,22 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/vendor/animate.css/animate.min.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/bootstrap-icons/bootstrap-icons.css",
+              "src/assets/vendor/boxicons/css/boxicons.min.css",
+              "src/assets/vendor/glightbox/css/glightbox.min.css",
+              "src/assets/vendor/swiper/swiper-bundle.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/main.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.js",
+              "src/assets/vendor/glightbox/js/glightbox.min.js",
+              "src/assets/vendor/isotope-layout/isotope.pkgd.min.js",
+              "src/assets/vendor/swiper/swiper-bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3e899016-9a7a-48af-99e2-c4348ea0df66"
   }
 }
