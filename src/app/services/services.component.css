@@ -1,0 +1,79 @@
+/*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 60px 0;
+  }
+
+  .section-bg {
+    background-color: #f0f4f4;
+  }
+
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #334242;
+  }
+
+  .section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 1px;
+    background: #00c1c1;
+    bottom: 0;
+    left: calc(50% - 100px);
+  }
+
+  .section-title p {
+    margin-bottom: 0;
+  }
+
+/*--------------------------------------------------------------
+  # Services
+  --------------------------------------------------------------*/
+  .services .icon-box {
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 6px;
+    background: #fff;
+  }
+
+  .services .icon-box i {
+    float: left;
+    color: #00c1c1;
+    font-size: 40px;
+    line-height: 0;
+  }
+
+  .services .icon-box h4 {
+    margin-left: 70px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .services .icon-box h4 a {
+    color: #334242;
+    transition: 0.3s;
+  }
+
+  .services .icon-box:hover h4 a {
+    color: #00c1c1;
+  }
+
+  .services .icon-box p {
+    margin-left: 70px;
+    line-height: 24px;
+    font-size: 14px;
+  }
