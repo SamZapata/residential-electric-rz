@@ -18,21 +18,6 @@ export class HeaderComponent {
     }
 
     /**
-     * Scrolls to an element with header offset
-     */
-    // const scrollto = (el: string) => {
-    //   let header: any = select('#header');
-    //   let offset = header?.offsetHeight;
-
-    //   let elementPos: any = select(el)
-    //   window.scrollTo({
-    //     top: elementPos.offsetTop - offset,
-    //     behavior: 'smooth'
-    //   })
-    // }
-
-
-    /**
      * Toggle .header-scrolled class to #header when page is scrolled
      */
     const selectHeader = select('#header');
@@ -58,34 +43,39 @@ export class HeaderComponent {
     })
 
     /**
-     * Mobile nav dropdowns activate
+     * Navbar links active state on scroll
      */
-    // let selectNavbarDropdown: any = document.querySelectorAll('.navbar .dropdown > a');
-    // selectNavbarDropdown?.forEach(e => e.addEventListener('click', function (e) {
-    //   if (selectNavbar?.classList.contains('navbar-mobile')) {
-    //     e.preventDefault();
-    //     selectNavbarDropdown.nextElementSibling.classList.toggle('dropdown-active');
-    //   }
-    // }));
+    let navbarlinks: any = document.querySelectorAll('#navbar .scrollto');
+    const navbarlinksActive = () => {
+      let position = window.scrollY + 200
+      navbarlinks.forEach(navbarlink => {
+        if (!navbarlink.hash) return
+        let section: any = select(navbarlink.hash)
+        if (!section) return
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          navbarlink.classList.add('active')
+        } else {
+          navbarlink.classList.remove('active')
+        }
+      })
+    }
+    window.addEventListener('load', navbarlinksActive)
+    document.addEventListener('scroll', navbarlinksActive);
 
     /**
-     * Scrool with ofset on links with a class name .scrollto
-     */
-    let selectScrollto = document.querySelector('.scrollto');
-    selectScrollto?.addEventListener('click', (e) => {
-      console.log(selectScrollto);
-    //   if (selectScrollto?.hash) {
-    //     e.preventDefault();
-
-    //     let navbar = select('#navbar')
-    //     if (navbar?.classList.contains('navbar-mobile')) {
-    //       navbar.classList.remove('navbar-mobile');
-    //       selectMobileNavT?.classList.toggle('bi-list');
-    //       selectMobileNavT?.classList.toggle('bi-x');
-    //     }
-    //     scrollto(selectScrollto.hash);
-    //   }
-    })
+     * Close the navbar mobile
+    */
+    navbarlinks.forEach(selectEl => selectEl.addEventListener('click', () => {
+      if (select(selectEl.hash)) {
+        let navbar: any = select('#navbar')
+        if (navbar.classList.contains('navbar-mobile')) {
+          navbar.classList.remove('navbar-mobile')
+          let navbarToggle: any = select('.mobile-nav-toggle')
+          navbarToggle.classList.toggle('bi-list')
+          navbarToggle.classList.toggle('bi-x')
+        }
+      }
+    }));
 
   }
 }
