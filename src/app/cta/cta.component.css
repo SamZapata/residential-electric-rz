@@ -3,7 +3,9 @@
   --------------------------------------------------------------*/
   .cta {
     background: linear-gradient(rgba(2, 2, 2, 0.1), rgba(0, 0, 0, 0.5)), fixed center center; /*url("../img/cta-bg.jpg")*/
+    background-image: url("../../assets/img/cta-1.jpg");
     background-size: cover;
+    background-position: center bottom;
     padding: 120px 0;
   }
 
