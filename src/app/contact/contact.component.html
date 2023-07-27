@@ -4,31 +4,32 @@
 
     <div class="section-title">
       <h2>Contacto</h2>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      <!-- <p>
+      </p> -->
     </div>
 
     <div class="row">
       <div class="col-lg-6">
         <div class="info-box mb-4">
           <i class="bx bx-map"></i>
-          <h3>Our Address</h3>
-          <p>A108 Adam Street, New York, NY 535022</p>
+          <h3>¿Dónde estamos?</h3>
+          <p>Encuentranos en Santa Rosa de Cabal, Risaralda, Colombia.</p>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6">
         <div class="info-box  mb-4">
           <i class="bx bx-envelope"></i>
-          <h3>Email Us</h3>
-          <p>contact@example.com</p>
+          <h3>Email</h3>
+          <p>rzelectricidadresidencial@gmail.com</p>
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6">
         <div class="info-box  mb-4">
           <i class="bx bx-phone-call"></i>
-          <h3>Call Us</h3>
-          <p>+1 5589 55488 55</p>
+          <h3>Llamanos</h3>
+          <p>+57 320 506 3462</p>
         </div>
       </div>
 
@@ -37,31 +38,37 @@
     <div class="row">
 
       <div class="col-lg-6 ">
-        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+        <!-- <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe> -->
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111901.48156632092!2d-75.7177317583034!3d4.8538897647747925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3881809c7f5a9f%3A0x2849061d9ddbf2b6!2sSanta%20Rosa%20de%20Cabal%2C%20Risaralda!5e0!3m2!1sen!2sco!4v1689786816467!5m2!1sen!2sco" width="100%" height="380px" frameBorder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="col-lg-6">
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form #form="ngForm" class="contact-form" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="contactForm.name">
+              <span>Error Message</span>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email" required [(ngModel)]="contactForm.email">
+              <span>Error Message</span>
             </div>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto: Cotizar mi proyecto" required [(ngModel)]="contactForm.subject">
+            <span>Error Message</span>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required [(ngModel)]="contactForm.message"></textarea>
+            <span>Error Message</span>
           </div>
-          <div class="my-3">
+          <!-- <div class="my-3">
             <div class="loading">Loading</div>
-            <div class="error-message"></div>
+            <div class="error-message">Your message has not been sent. </div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          </div> -->
+          <div class="text-center"><button type="submit" [disabled]="form.invalid">Enviar</button></div>
         </form>
       </div>
 

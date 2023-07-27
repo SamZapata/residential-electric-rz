@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
+  contactForm = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  }
+
+  onSubmit() {
+    console.log(this.contactForm);
+    // throw new Error('Method not implemented.');
+  }
+
 }
