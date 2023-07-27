@@ -44,14 +44,14 @@
       </div>
 
       <div class="col-lg-6">
-        <form #form="ngForm" class="contact-form" (ngSubmit)="onSubmit()">
+        <form #form="ngForm" class="email-form" (ngSubmit)="onSubmit()">
           <div class="row">
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="contactForm.name">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="contactForm.name" [minlength]="3">
               <span>Error Message</span>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Email" required [(ngModel)]="contactForm.email">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Email" required [(ngModel)]="contactForm.email" [email]="true">
               <span>Error Message</span>
             </div>
           </div>
@@ -60,7 +60,7 @@
             <span>Error Message</span>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required [(ngModel)]="contactForm.message"></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required [(ngModel)]="contactForm.message" [minlength]="6"></textarea>
             <span>Error Message</span>
           </div>
           <!-- <div class="my-3">

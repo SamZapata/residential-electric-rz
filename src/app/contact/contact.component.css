@@ -73,7 +73,7 @@
   }
 
   /* contact form */
-  form.contact-form .form-group span{
+  form.email-form .form-group span{
     color: red;
     margin-left: 7px;
     display: none;
@@ -154,6 +154,7 @@
     color: #fff;
     transition: 0.4s;
     border-radius: 4px;
+    margin-top: 5%;
   }
 
   .contact .email-form button[type=submit]:hover {
