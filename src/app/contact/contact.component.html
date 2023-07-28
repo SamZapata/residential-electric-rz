@@ -44,7 +44,7 @@
       </div>
 
       <div class="col-lg-6">
-        <form #form="ngForm" class="email-form" (ngSubmit)="onSubmit()">
+        <form #form="ngForm" class="email-form" id="contactForm">
           <div class="row">
             <div class="col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required [(ngModel)]="contactForm.name" [minlength]="3">
@@ -68,7 +68,11 @@
             <div class="error-message">Your message has not been sent. </div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div> -->
-          <div class="text-center"><button type="submit" [disabled]="form.invalid">Enviar</button></div>
+          <div class="text-center">
+            <button type="submit" [disabled]="form.invalid" >
+              Enviar
+            </button>
+          </div>
         </form>
       </div>
 
